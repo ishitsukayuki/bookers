@@ -19,7 +19,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li>
-                <%= link_to "Home", user_path(current_user.id), class: "glyphicon glyphicon-home user_#{current_user.id}" %>
+                <%= link_to "Home", user_path(current_user.id), class: "glyphicon glyphicon-home home" %>
               </li>
               <li>
                 <%= link_to "Users", users_path(current_user.id), class: "glyphicon glyphicon-user users" %>
@@ -48,9 +48,12 @@
         </nav>
       </div>
     </header>
-
-    <%= yield %>
-
+    <div class="body">
+      <div class="container">
+        <p class="notice"><%= notice %></p>
+        <%= yield %>
+      </div>
+    </div>
     <footer>
       <div class="container">
         <div class="row">
